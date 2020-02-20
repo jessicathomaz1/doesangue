@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Doe sangue! Doe vida!</title>
+
+	<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+	<!-- ESTRUTURA DO HTML - BODY -->
+	<!-- <header>Conteúdo do topo</header>
+	<section>Seções</section>
+	<main>Conteúdo central</main>
+	<footer>Rodapé</footer> -->
+	<!-------------------------HEADER------------------------->
+	<header>
+		<img class="logo" src="/logo.png" alt="DOE">
+		<h2>A sua doação importa</h2>
+		<p>Até 3 vidas com 1 doação</p>
+		<p>Mais de 38.000 doações são necessárias todos os dias</p>
+		<p>Apenas 1,9% da população brasileira, doa sangue</p>
+
+		<button>Quero ajudar!</button>
+	</header>
+	<!------------------------SECTION------------------------->
+	<section class="form hide">
+		<h2>Entre na lista de doadores</h2>
+		<!-- input - entrada -->
+		<!-- output - saída -->
+		<form action="/" method="POST">
+			<input type="text" name="name" placeholder="Nome Completo">
+			<input type="text" name="email" placeholder="Email">
+			<input type="text" name="blood" placeholder="Tipo Sanguíneo">
+			<button>Quero ajudar!</button>
+		</form>
+	</section>
+	<!-------------------------MAIN--------------------------->
+	<main>
+		<h2>Últimos <span>doadores</span></h2>
+		<section class="donors">
+			<!--donors-->
+			{% for donor in donors %}
+			<div class="donor">
+				<div class="blood">{{donor.blood}}</div>
+				<p>{{donor.name}}</p>
+			</div>
+			{% endfor %}
+		</section>
+
+	</main>
+	<!------------------------FOOTER-------------------------->
+	<footer>
+		Com ❤️ @jessicathomaz1
+	</footer>
+	<!------------------------JS-------------------------->
+	<script src="/scripts.js"></script>
+
+</body>
+
+</html>
